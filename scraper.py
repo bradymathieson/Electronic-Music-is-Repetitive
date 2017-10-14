@@ -9,7 +9,8 @@ file_output = True
 
 def strip_punctuation(word):
     for ch in punctuation:
-        word = word.replace(ch, '')
+        if (ch != '[' and ch != ']' and ch != '\''):
+            word = word.replace(ch, '')
     return word
 
 def get_song_lyrics(title, artist, genre):
@@ -32,12 +33,10 @@ def get_song_lyrics(title, artist, genre):
             text_file.write(lyrics)
             text_file.close()
 
-        # Output to file
-        # text_file = open("")
-
 def test():
-    get_song_lyrics("Everytime We Touch", "Cascada", "dance")
-    get_song_lyrics("D.N.A.", "Kendrick Lamar", "rap")
+    # get_song_lyrics("Everytime We Touch", "Cascada", "dance")
+    # get_song_lyrics("D.N.A.", "Kendrick Lamar", "rap")
+    get_song_lyrics("Help Me Dr. Dick", "E-rotic", "eurodance")
 
 if __name__ == '__main__':
     if test:
